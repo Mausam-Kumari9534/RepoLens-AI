@@ -1,0 +1,51 @@
+version: 2
+
+updates:
+  # Root npm dependencies
+  - package-ecosystem: "npm"
+    directory: "/"
+
+    schedule:
+      interval: "daily"
+      time: "04:00"
+      timezone: "Asia/Kolkata"
+
+    open-pull-requests-limit: 5
+
+    versioning-strategy: increase
+
+    commit-message:
+      prefix: "deps"
+
+    labels:
+      - "dependencies"
+
+    reviewers:
+      - "Mausam-Kumari9534"
+
+    assignees:
+      - "Mausam-Kumari9534"
+
+    ignore:
+      - dependency-name: "*"
+        update-types:
+          - "version-update:semver-major"
+
+  # GitHub Actions
+  - package-ecosystem: "github-actions"
+    directory: "/"
+
+    schedule:
+      interval: "weekly"
+      day: "monday"
+      time: "05:00"
+      timezone: "Asia/Kolkata"
+
+    labels:
+      - "github-actions"
+
+    reviewers:
+      - "Mausam-Kumari9534"
+
+    assignees:
+      - "Mausam-Kumari9534"
